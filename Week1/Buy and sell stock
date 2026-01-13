@@ -1,5 +1,5 @@
-class Solution {
-    public int maxProfit(int[] arr) {
+class maxProfit(int[] arr) {
+    public static void main(String[]args){
         int n=arr.length;
         int[]suf=new int[n];
         suf[n-1]=arr[n-1];
@@ -11,5 +11,6 @@ class Solution {
             ans=Math.max(ans,suf[i+1]-arr[i]);
         }
         return ans;
+}
     }
 }
