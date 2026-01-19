@@ -1,0 +1,71 @@
+package stack_icp;
+
+public class Stack {
+    private int[]arr;
+    private int index=0;
+
+    public Stack(int n){
+        arr=new int[n];
+    }
+
+    public void push(int n){
+        if (index==arr.length){
+            System.out.println("stack overflow");
+            return;
+        }
+        arr[index]=n;
+        index++;
+    }
+
+    public int peek(){
+        if (index==0) return -1;
+        return arr[index-1];
+    }
+
+    public int pop(){
+        if (index==0) return -1;
+        int a= arr[index-1];
+        index--;
+        return a;
+    }
+
+    public int size() {
+        return index;
+    }
+
+    public boolean isEmpty(){
+        if (index==0) return true;
+        return false;
+    }
+
+
+}
+
+
+
+
+//==================client
+
+package stack_icp;
+
+public class stack_client {
+    public static void main(String[] args) {
+        Stack st=new Stack(5);
+        st.push(1);
+        st.push(2);
+        st.push(3);
+        System.out.println(st.pop());
+        System.out.println(st.pop());
+        System.out.println(st.pop());
+        System.out.println(st.peek());
+        System.out.println(st.isEmpty());
+        st.push(1);
+        st.push(2);
+        st.push(3);
+        st.push(1);
+        st.push(2);
+        st.push(3);
+    }
+}
+
+ 
