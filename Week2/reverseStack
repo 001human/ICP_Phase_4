@@ -1,0 +1,28 @@
+package stack_icp;
+
+import java.util.*;
+
+public class yu {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        Stack<Integer>st=new Stack();
+        while (n-->0){
+            int a=sc.nextInt();
+            st.push(a);
+        }
+        reverseStack(st);
+    }
+
+    public static void reverseStack(Stack<Integer> st) {
+        // code here
+        int[]arr=new int[st.size()];
+        int idx=0;
+        while(!st.isEmpty()){
+            arr[idx++]=st.pop();
+        }
+        for(int i=0;i<arr.length;i++){
+            st.push(arr[i]);
+        }
+    }
+}
